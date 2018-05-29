@@ -1,0 +1,22 @@
+CC = gcc
+CFLAGS = -g -Wall -ansi -pedantic
+MAIN = smake_test
+OBJS = smake_test.o functions.o linkedlist.o
+all : $(MAIN)
+
+$(MAIN) : $(OBJS)
+	$(CC) $(CFLAGS) -o $(MAIN) $(OBJS)
+
+smake_test.o : smake_test.c
+	$(CC) $(CFLAGS) -c smake_test.c
+
+functions.o : functions.c functions.h
+	$(CC) $(CFLAGS) -c functions.c
+
+linkedlist.o : linkedlist.c linkedlist.h
+	$(CC) $(CFLAGS) -c linkedlist.c
+
+clean :
+	rm *.o $(MAIN) core
+
+

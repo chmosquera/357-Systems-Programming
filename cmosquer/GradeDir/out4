@@ -1,0 +1,11 @@
+Done!
+Echo
+echo "Done!"
+echo "Echo"
+echo "main built"
+echo "other built"
+gcc -c main.c
+gcc -c other.c
+gcc -o main main.o other.o
+main built
+other built

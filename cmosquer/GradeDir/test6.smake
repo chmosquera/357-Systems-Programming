@@ -1,0 +1,3 @@
+invalidRule abc
+	echo "Should not run"
+

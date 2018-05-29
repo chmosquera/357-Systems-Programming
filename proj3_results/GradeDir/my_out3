@@ -1,0 +1,7 @@
+
+
+int otherFunc()
+{
+   return 37;
+}
+cat other.c

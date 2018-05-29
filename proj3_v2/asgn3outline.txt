@@ -1,0 +1,68 @@
+Name: Chanelle Mosquera
+
+Assignment 3 Decomposition
+
+Files: functions.c functions.h linkedlist.c linkedlist.h smake.c
+
+---------------------------------------------------------------------------------
+This assignment will be implemented using linked lists, arrays, and structs. 
+struct Rule will contain:
+    1. char[] target
+    2. struct LinkedList * dependencies[]
+    3. struct LinkedList * actions[]
+The contents of each rule from the Smakefile will be stored as a struct Rule. 
+A list of these Rules will be contained in a linked list that uses struct Node1.
+struct Node1 will contain:
+    1. stuct Rule * rule
+    2. struct Node1 * next
+The dependencies and actions of each rule will be stored in Nodes and linkedlists.
+struct Node2 will contain:
+	1. char[] dependency
+	2. struct Node2 * next
+
+---------------------------------------------------------------------------------
+1. Open Smakefile file 
+    a. Report error and exit if file does not exist.
+2. Create linked list of struct Rules
+    a. struct Node ** HEAD;
+    b. struct Node * CreateNode(struct Rule *);
+    c. struct Rule * CreateRule(char[] target, LinkedList * deps, LinkedList * acts);
+3. Rule Processing
+    a. void ProcessRule(struct Rule *)
+        i. A pointer to a struct Rule will be passed into the function
+        ii. Function will deal with the Rule's dependencies - detailed below
+    b. Type of dependency
+        i. Type will be stored in a union DepType, which will be either
+            - struct Rule *
+            - FILE *
+        ii. struct Rule * DepIsTarget(char[] dep);
+            - return NULL if dependency is not a target
+        iii. FILE * DepIsFile(char[] dep);
+            - return NULL if dependency is not a file
+        iv. Dependency does not exist if its DepType == NULL
+            - Report error "No rule to make target"
+    c. Check if dependency has been updated
+        i. if DepType is a file
+            - int NeedUpdate(FILE *);
+                + return 1 if update is needed
+            - if a file with target's name doesn't exist, an update is needed
+            - if file's timestamp is more recent than target file's timestamp, an update is needed
+        ii. if DepType is a target
+            - execute ProcessRule(struct Rule *) passing in the rule for that target
+4. Execute Actions
+    a. void ExecuteActions(struct Rule *)
+        i. will be called during step 3 if necessary
+    b. If NeedUpdate(FILE *) returns 1
+    c. Parse through the rules actions, print out using stdout, execute actions using system()
+    d. global variable int UpdateMain set to 1.
+5. Execute main's actions
+    a. void ExecuteMainActions(struct Rule *)
+        i. the struct rule passed in will be the target: main
+    b. Execute if UpdateMain == 1 (mentioned in step 4)
+
+---------------------------------------------------------------------------------
+TESTING
+
+I will be testing each function in a seperate program - both working cases and fail cases.
+
+

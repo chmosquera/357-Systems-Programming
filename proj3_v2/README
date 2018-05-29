@@ -1,0 +1,6 @@
+Name: Chanelle Mosquera
+Project: Assignment 3 - smake
+Files: functions.c functions.h linkedlist.c linkedlist.h smake.c
+
+CONCERN ABOUT TESTING - PLEASE READ
+I ran the tests you provided on my program and the outputs match those of the expected results. However, when I redirect the outputs into a file, I noticed the outputs get out of order in the file. Therefore when I diff the two files, they don't match. I heard from someone that due to buffering issues, data may get printed out of order and that the graders have noticed that and are working around it. I want to reiterate that my program does print out the outputs properly, but it gets shuffled when redirecting the outputs into a file.

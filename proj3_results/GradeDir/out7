@@ -1,0 +1,10 @@
+echo "Tree1"
+echo "Tree 1 leaf 1"
+echo "Tree 1 leaf 2"
+echo "Tree 1 leaf 3"
+echo "Tree 1 leaf 4"
+Tree1
+Tree 1 leaf 1
+Tree 1 leaf 2
+Tree 1 leaf 3
+Tree 1 leaf 4

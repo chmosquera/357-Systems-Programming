@@ -1,0 +1,6 @@
+echo : 
+	echo "Echo test"
+
+echo2 : 
+	echo "Echo test 2"
+

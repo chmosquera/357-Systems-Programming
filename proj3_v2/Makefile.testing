@@ -1,0 +1,3 @@
+main : main.o other.o
+	gcc -o main main.o other.o
+	echo "Done!"

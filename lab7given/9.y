@@ -1,0 +1,17 @@
+9y
+9.y
+evens
+evens.c
+fe_test
+fe_test.c
+f_test
+f_test.c
+limit_fork.c
+limit_fork.h
+Makefile
+odds
+odds.c
+test.txt
+to_file
+to_file.c
+XDG_VTNR=1
